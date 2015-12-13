@@ -21,12 +21,9 @@ First, a prerequisite for understanding this blog post is a knowledge of how Obj
 
 Objects can be seen as a container. A data container. Much like how you would have a plastic container for you socks, underwear, etc. And they look something like this :
 
-```
-var object = {
-	socks : 4,
-    underwear : 6
-}; 
-```
+{% highlight javascript %}
+var object = {};
+{% endhighlight %}
 
 So what are classes then? And what are they used for? 
 
