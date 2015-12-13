@@ -15,14 +15,31 @@ published: true
 ---
 
 
+
 So what are Classes in JavaScript? And why do we have them? What is their usage? 
 
-First, a prerequisite for understanding this blog post is a knowledge of how Objects in JavaScript works. I will spend a paragraph for anyone who doesn't know. 
+First, a prerequisite for understanding this blog post is a knowledge of how Objects in JavaScript works. I will spend a couple of paragraphs here for anyone who doesn't know. 
 
 Objects can be seen as a container. A data container. Much like how you would have a plastic container for you socks, underwear, etc. And they look something like this :
 
 {% highlight javascript %}
-var object = {};
+var shelf = {
+	socks : 5,
+    underwear : 3
+};
+{% endhighlight %}
+
+And you can assign new "shelves" by the dot notation :
+
+{% highlight javascript %}
+shelf.jeans = 10;
+
+//now the 'shelf' object looks like :
+shelf = {
+	socks : 5,
+    underwear : 3,
+    jeans : 10
+};
 {% endhighlight %}
 
 So what are classes then? And what are they used for? 
@@ -39,7 +56,7 @@ How would I build 10 of these in JavaScript?
 
 I guess I can do something like :
 
-```
+{% highlight javascript %}
 var register = {
 	opendrawer : function() { ... },
     closedrawer : function() { ... },
@@ -57,19 +74,21 @@ var register2 = {
     closedrawer : function() { ... },
     money : 15
 }
-```
+{% endhighlight %}
 
 And on down the line. That could certainly work. But it isn't the most efficient. If computers are not going to be efficient for us, why did we even create them in the first place? ;)
 
-So that's where Classes come in. 
+So that's where Classes come in.
 
+Classes let us build right-out-of-the-factory-line cash registers. 
 
+Take a look at this code here:
 
-
-
-
-
-
-
-
-
+{% highlight javascript %} 
+var registerMaker = function() {
+	var register = {};
+    register.opendrawer = function() {...};
+    register.closedrawer = function() {...};
+    return register; 
+};
+{% endhighlight %} 
